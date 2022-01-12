@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 body{
     background-color: #fff;
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family: 'Raleway', 'Arial', sans-serif;
 }
 
 .box{
@@ -16,131 +18,162 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-}
-
-.text{
-    position: relative;
-    top: 2px;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 1px;
-    font-size: 1.35em;
+    width: 1167px;
+    height: 55px;
 }
 
 .one{
-    font-size: 1.35em;
-    display: block;
+    position: relative;
+    margin: 15px 25px;
     color: #fff;
-    opacity: 0;
-    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.35em;
+    cursor: pointer;
 }
 
-.two{
-    font-size: 1.35em;
-    display: block;
-    color: #fff;
+.one::before{
+    content: '[';
+    display: inline-block;
     opacity: 0;
-    transition: all 0.2s ease;
-} 
-
-.main:hover .one{
-    opacity: 1;
-    margin-right: 15px;
+    transition: all 0.5s ease;
+    transform: translate(15px);
 }
 
-.main:hover .two{
+.one::after{
+    content: ']';
+    display: inline-block;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translate(-15px);
+}
+
+.one:hover::before{
+    transform: translate(-10px);
     opacity: 1;
-    margin-left: 15px;
+}
+
+.one:hover::after{
+    transform: translate(10px);
+    opacity: 1;
 }
 
 /* box-1 end */
 /* box-2 end */
 
-.box:nth-child(2){
-    background-color: green;
+.box-2{
+    position: relative;
+    width: 100%;
+    height: 375px;
+    background-color: #3fa46a;
 }
 
-.text-2{
+.main-2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1167px;
+    height: 65px;
+}
+
+.two{
     position: relative;
-    text-transform: uppercase;
+    margin: 15px 25px;
     color: #fff;
+    text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.35em;
+    cursor: pointer;
 }
 
-.text-2::after{
+.two::after{
     content: '';
     display: inline-block;
     width: 100%;
-    height: 5px;
+    height: 1px;
     background-color: #fff;
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease-in-out;
 }
 
-.main:hover .text-2::after{
+.two:hover::after{
     bottom: -20px;
     opacity: 1;
+    height: 4px;
 }
 
 /* box-2 end */
 /* box-3 start */
 
-.box:nth-child(3){
-    background-color: #fff;
+.box-3{
+    position: relative;
+    width: 100%;
+    height: 375px;
+    background-color: #ecf0f1;
 }
 
-.text-3{
+.main-3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1167px;
+    height: 77px;
+}
+
+.three{
+    margin: 25px 35px;
+    padding-bottom: 10px;
     position: relative;
     text-transform: uppercase;
-    color: #000;
+    color: #566473;
+    font-weight: 700;
     letter-spacing: 1px;
     font-size: 1.35em;
-    padding-bottom: 20px;
 }
 
-.line{
-    display: block;
-    width: 115px;
-    height: 2px;
-    background-color: #000;
-    transition: all 0.5s ease;
-}
-
-.text-3::after{
+.three::after{
     content: '';
+    width: 100%;
+    height: 3px;
     display: inline-block;
-    width: 115px;
-    height: 2px;
-    background-color: #000;
+    background-color: #566473;
     position: absolute;
-    left: 0;
     bottom: 0;
-    opacity: 0;
-    transition: all 0.5s ease;
+    left: 0;
+    transition: all 0.4s ease;
 }
 
-.main:hover .text-3::after{
-    bottom: 70px;
-    opacity: 1;
-    width: 140px;
-    left: -15px;
+.three::before{
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: inline-block;
+    background-color: #566473;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s ease;
 }
 
-.main:hover .line{
-    width: 140px;
+.three:hover::after{
+    transform: scale(1.2);
 }
 
+.three:hover::before{
+    transform: scale(1.2) translateY(-35px);
+}
 
 /* box-3 end */
 /* box-4 start */
 
 .cover{
-    background-color: green;
+    background-color: #16a085;
     width: 100%;
     height: 375px;
     position: relative;
@@ -148,41 +181,50 @@ body{
     left: 0;
 }
 
-.content{
-    width: 200px;
-    height: 70px;
+.main-4{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1167px;
+    height: 50px;
+}
+
+.content{
+    width: 200px;
+    height: 45px;
+    padding: 10px 20px;
     perspective: 1000px;
     transition: all 0.3s ease;
-    overflow: hidden;
+    position: relative;
+    overflow: hidden;   
+    margin-right: 25px;
 }
 
 .cube{
     width: 200px;
-    height: 70px;
-    background-color: lightgreen;
+    height: 45px;
+    background-color: #0f7c67;
     color: #fff;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.35em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 15px;
 }
 
 .front {
     transform: translate3d(0, 0, 0);
-    z-index: 1;
     transition: all 0.3s ease;
 }
 
 .left {
     transform: translate3d(-200px, 0, 0px);
     background-color: #fff;
-    color: #000;
+    color: #0f7c67;
     transition: all 0.3s ease;
 }
 
@@ -198,7 +240,7 @@ body{
 /* box-5 start */
 
 .cover-1{
-    background-color: orange;
+    background-color: #f19f0f;
     width: 100%;
     height: 375px;
     position: relative;
@@ -207,23 +249,24 @@ body{
 }
 
 .content-1{
-    width: 160px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1167px;
+    height: 55px;
 }
 
 .text-unknown{
-    height: 55px;
+    width: 135px;
+    height: 25px;
+    margin: 15px 25px;
+    transition: all 0.3s ease;
     position: relative;
+    color: #fff;
     text-transform: uppercase;
-    color: #000;
     letter-spacing: 1px;
     font-size: 1.35em;
-    text-align: center;
-    color: #fff;
-    transition: all 0.5s ease;
 }
 
 .text-unknown:hover {
@@ -232,21 +275,20 @@ body{
 
 .dot-one{
     position: absolute;
-    bottom: 0;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 5px;
     height: 5px;
-    display: block;
+    display: inline-block;
     background-color: #fff;
     border-radius: 50%;
     transition: all 0.5s ease;
-    z-index: 3;
     opacity: 0;
 }
 .dot-two{
     position: absolute;
-    bottom: 0;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 5px;
@@ -259,16 +301,15 @@ body{
 }
 .dot-three{
     position: absolute;
-    bottom: 0;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 5px;
     height: 5px;
-    display: block;
+    display: inline-block;
     background-color: #fff;
     border-radius: 50%;
     transition: all 0.5s ease;
-    z-index: 4;
     opacity: 0;
 }
 
@@ -290,7 +331,7 @@ body{
 /* box-7 start */
 
 .cover-2{
-    background-color: red;
+    background-color: #cd4436;
     width: 100%;
     height: 375px;
     position: relative;
@@ -298,28 +339,36 @@ body{
     left: 0;
 }
 
-.content-2{
-    width: 200px;
-    height: 70px;
+.content-container{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1167px;
+    height: 43px;
+}
+
+.content-2{
+    width: 200px;
+    height: 43px;
+    position: relative;
     transform-style: preserve-3d;
     transition: all 0.3s ease;
+    margin-right: 25px;
 }
 
 .cube-1{
     width: 200px;
-    height: 70px;
-    background-color: lightsalmon;
+    height: 45px;
+    background-color: #e35041;
     color: #fff;
     text-align: center;
-    font-size: 30px;
-    padding: 15px;
+    font-size: 1.35em;
+    padding: 10px 14px;
     position: absolute;
     top: 0;
     left: 0;
+    height: 45px;
 }
 
 .front-1 {
@@ -331,9 +380,49 @@ body{
 }
 
 .content-2:hover{
-    transform: translate(-50%, -50%) rotateY(-90deg);
+    transform: rotateY(-90deg);
 }
 
 /* box-6 end */
 /* box-7 start */
 
+.box-data{
+    background-color: #aab7b7;
+    width: 100%;
+    height: 375px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.box-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1167px;
+}
+
+.last{
+    background-color: transparent;
+    color: #708586;
+    position: relative;
+    margin-right: 70px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.35em;
+}
+  
+.inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-14px) translateX(8px) rotate(8deg);
+    transition: all 0.4s ease;
+    opacity: 0;
+    color: #fff;
+  }
+  .last:hover .inner{
+    opacity: 1;
+    transform: translateY(0px);
+  }
